@@ -22,8 +22,3 @@ Open the URL shown in the terminal (usually `http://localhost:5173`).
 npm run build
 npm run preview
 ```
-
-## Customize
-
-- Replace placeholder email, LinkedIn, GitHub, and project repo URLs in `src/components/Contact.jsx` and `src/components/Projects.jsx` (via `ProjectCard` data in `Projects.jsx`).
-- Toggle dark mode is persisted in `localStorage` under the key `theme`.
