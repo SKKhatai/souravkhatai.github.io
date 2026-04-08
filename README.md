@@ -9,7 +9,6 @@ One-page portfolio for **Sourav Kumar Khatai** — Java Backend Developer.
 ## Setup and run
 
 ```bash
-cd "My Portfolio"
 npm install
 npm run dev
 ```
