@@ -11,7 +11,7 @@ export default function About() {
         <SectionTitle
           eyebrow="About me"
           title="Background & focus"
-          subtitle="Backend-first engineer with experience across the Java and PHP ecosystems."
+          subtitle="Backend-first engineer focused on the Java ecosystem."
         />
         <motion.div
           className="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
@@ -28,10 +28,7 @@ export default function About() {
           <p>
             On the Java side I work with <strong className="font-semibold text-slate-800 dark:text-slate-200">Java</strong> and{' '}
             <strong className="font-semibold text-slate-800 dark:text-slate-200">Spring Boot</strong> to build modular applications
-            with clear layering and testable components. For PHP stacks I use{' '}
-            <strong className="font-semibold text-slate-800 dark:text-slate-200">Laravel</strong> and{' '}
-            <strong className="font-semibold text-slate-800 dark:text-slate-200">PHP</strong> to deliver rapid feature
-            development with Eloquent, queues, and Blade or API resources as needed.
+            with clear layering, sensible boundaries, and testable components.
           </p>
           <p>
             Whether it&apos;s a greenfield service or extending an existing codebase, I aim for

@@ -5,18 +5,18 @@ import SectionTitle from './SectionTitle';
 const socials = [
   {
     label: 'Email',
-    value: 'sourav.khatai@example.com',
-    href: 'mailto:sourav.khatai@example.com',
+    value: 'souravkhatai6@gmail.com',
+    href: 'mailto:souravkhatai6@gmail.com',
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/yourprofile',
-    href: 'https://linkedin.com/in/yourprofile',
+    value: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/sourav-kumar-khatai/',
   },
   {
     label: 'GitHub',
-    value: 'github.com/yourusername',
-    href: 'https://github.com/yourusername',
+    value: 'GitHub',
+    href: 'https://github.com/SKKhatai',
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Contact() {
         <SectionTitle
           eyebrow="Contact"
           title="Let's connect"
-          subtitle="Replace the placeholder links with your real profiles. The form is frontend-only."
+          subtitle=" Demo form is not sending data anywhere."
         />
         <div className="mx-auto grid max-w-4xl gap-12 lg:grid-cols-5">
           <motion.ul

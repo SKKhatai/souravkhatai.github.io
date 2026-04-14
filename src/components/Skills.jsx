@@ -4,8 +4,6 @@ import SectionTitle from './SectionTitle';
 const skills = [
   'Java',
   'Spring Boot',
-  'Laravel',
-  'PHP',
   'MySQL',
   'PostgreSQL',
   'HTML',

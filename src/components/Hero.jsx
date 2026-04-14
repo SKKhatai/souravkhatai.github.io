@@ -32,8 +32,7 @@ export default function Hero() {
             Java Backend Developer
           </p>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-            I design and build reliable server-side systems with Java and Spring Boot, and I
-            ship full-stack features with Laravel and PHP when the project calls for it. I care
+            I design and build reliable server-side systems with Java and Spring Boot. I care
             about clean APIs, solid data models, and code that teammates can maintain.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">

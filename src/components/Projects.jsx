@@ -13,8 +13,8 @@ const projects = [
     title: 'Student Management System',
     description:
       'Web application for managing students, courses, and enrollments. Features CRUD modules, validation, and an admin-friendly dashboard backed by a relational schema.',
-    stack: ['Laravel', 'PHP', 'Blade', 'MySQL', 'JavaScript'],
-    github: 'https://github.com/yourusername/student-management-laravel',
+    stack: ['Java', 'Spring Boot', 'MySQL', 'REST APIs', 'JavaScript'],
+    github: 'https://github.com/yourusername/student-management-spring',
   },
 ];
 
