@@ -6,7 +6,7 @@ One-page portfolio for **Sourav Kumar Khatai** — Java Backend Developer.
 
 - [Node.js](https://nodejs.org/) 18+ (includes npm)
 
-## Setup and run
+## first Setup and run
 
 ```bash
 npm install
