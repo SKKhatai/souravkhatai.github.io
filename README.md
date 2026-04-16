@@ -1,4 +1,4 @@
-# Personal portfolio (React + Vite)
+# Personal Portfolio (React + Vite)
 
 One-page portfolio for **Sourav Kumar Khatai** — Java Backend Developer.
 
@@ -6,18 +6,26 @@ One-page portfolio for **Sourav Kumar Khatai** — Java Backend Developer.
 
 - [Node.js](https://nodejs.org/) 18+ (includes npm)
 
-## first Setup and run
+## Getting started
+
+Install dependencies and start the dev server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the URL shown in the terminal (usually `http://localhost:5173`).
+Then open the URL shown in the terminal (usually `http://localhost:5173`).
 
-## Build for production
+## Build (production)
+
+Create a production build and preview it locally:
 
 ```bash
 npm run build
 npm run preview
 ```
+
+## Deploy (GitHub Pages)
+
+This repo is set up for GitHub Pages (username/organization site). After merging changes into `main`, GitHub Pages will serve the site from the branch/source configured in the repository settings.
