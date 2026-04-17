@@ -25,7 +25,3 @@ Create a production build and preview it locally:
 npm run build
 npm run preview
 ```
-
-## Deploy (GitHub Pages)
-
-This repo is set up for GitHub Pages (username/organization site). After merging changes into `main`, GitHub Pages will serve the site from the branch/source configured in the repository settings.
