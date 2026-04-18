@@ -11,7 +11,7 @@ export default function Hero() {
       className="relative overflow-hidden pt-28 pb-20 sm:pt-32 sm:pb-28 lg:pt-36 lg:pb-32"
     >
       <div
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(50,147,255,0.15),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(50,147,255,0.2),transparent)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.18),transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(236,72,153,0.20),transparent)]"
         aria-hidden
       />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -29,11 +29,11 @@ export default function Hero() {
             <span className="text-gradient">Sourav Kumar Khatai</span>
           </h1>
           <p className="mt-2 text-xl font-medium text-brand-600 dark:text-brand-400 sm:text-2xl">
-            Java Backend Developer
+            SDE-1 · Java Backend · Cloud
           </p>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-            I design and build reliable server-side systems with Java and Spring Boot. I care
-            about clean APIs, solid data models, and code that teammates can maintain.
+            I build reliable backend services with Java + Spring Boot, deploy on AWS, and ship
+            production-ready systems with observability, strong data modeling, and test-first practices.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <motion.button
