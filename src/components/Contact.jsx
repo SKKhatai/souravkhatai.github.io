@@ -31,7 +31,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 border-t border-slate-200/80 bg-slate-50 py-20 dark:border-slate-800 dark:bg-slate-950 sm:py-24"
+      className="scroll-mt-20 border-t border-slate-200/60 bg-transparent py-20 dark:border-slate-800/60 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
@@ -65,7 +65,7 @@ export default function Contact() {
           </motion.ul>
 
           <motion.form
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:col-span-3"
+            className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 lg:col-span-3"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,7 +80,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   autoComplete="name"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none ring-brand-500/0 transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-white"
+                  className="w-full rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none ring-brand-500/0 transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="Your name"
                 />
               </label>
@@ -91,7 +91,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-white"
+                  className="w-full rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="you@example.com"
                 />
               </label>
@@ -101,7 +101,7 @@ export default function Contact() {
                   required
                   name="message"
                   rows={4}
-                  className="w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 dark:border-slate-600 dark:bg-slate-950 dark:text-white"
+                  className="w-full resize-y rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="Tell me about your project or role…"
                 />
               </label>
