@@ -1,15 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
-
-const skills = [
-  'Java',
-  'Spring Boot',
-  'MySQL',
-  'PostgreSQL',
-  'HTML',
-  'CSS',
-  'JavaScript',
-];
+import { resumeSkills } from '../data/resumeData';
 
 const container = {
   hidden: { opacity: 0 },
@@ -34,23 +25,38 @@ export default function Skills() {
         <SectionTitle
           eyebrow="Skills"
           title="Tools & technologies"
-          subtitle="Core stack I use to design, build, and ship backend-heavy applications."
+          subtitle="Java backend + cloud focused skill set, grouped for quick scanning."
         />
-        <motion.ul
-          className="mx-auto flex max-w-3xl flex-wrap justify-center gap-3"
+        <motion.div
+          className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 lg:grid-cols-3"
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-40px' }}
         >
-          {skills.map((name) => (
-            <motion.li key={name} variants={item} transition={{ type: 'spring', stiffness: 380, damping: 24 }}>
-              <span className="inline-flex rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-800 shadow-sm transition hover:border-brand-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:border-brand-500">
-                {name}
-              </span>
-            </motion.li>
+          {resumeSkills.map((group) => (
+            <motion.section
+              key={group.category}
+              variants={item}
+              transition={{ type: 'spring', stiffness: 380, damping: 26 }}
+              className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60"
+            >
+              <p className="font-display text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
+                {group.category}
+              </p>
+              <ul className="mt-3 flex flex-wrap gap-2">
+                {group.items.map((name) => (
+                  <li
+                    key={name}
+                    className="inline-flex rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-800 transition hover:border-brand-300 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:hover:border-brand-500"
+                  >
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            </motion.section>
           ))}
-        </motion.ul>
+        </motion.div>
       </div>
     </section>
   );

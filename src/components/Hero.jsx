@@ -29,11 +29,11 @@ export default function Hero() {
             <span className="text-gradient">Sourav Kumar Khatai</span>
           </h1>
           <p className="mt-2 text-xl font-medium text-brand-600 dark:text-brand-400 sm:text-2xl">
-            Java Backend Developer
+            SDE-1 · Java Backend · Cloud
           </p>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-            I design and build reliable server-side systems with Java and Spring Boot. I care
-            about clean APIs, solid data models, and code that teammates can maintain.
+            I build reliable backend services with Java + Spring Boot, deploy on AWS, and ship
+            production-ready systems with observability, strong data modeling, and test-first practices.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <motion.button

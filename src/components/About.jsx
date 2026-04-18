@@ -11,7 +11,7 @@ export default function About() {
         <SectionTitle
           eyebrow="About me"
           title="Background & focus"
-          subtitle="Backend-first engineer focused on the Java ecosystem."
+          subtitle="SDE-1 profile: Java backend engineering with cloud fundamentals."
         />
         <motion.div
           className="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
@@ -31,9 +31,8 @@ export default function About() {
             with clear layering, sensible boundaries, and testable components.
           </p>
           <p>
-            Whether it&apos;s a greenfield service or extending an existing codebase, I aim for
-            readable structure, sensible error handling, and documentation that helps the next
-            developer move fast.
+            I care about cloud-ready delivery (AWS + Docker), production monitoring, and team-friendly code:
+            readable structure, sensible error handling, and tests that protect behavior as systems evolve.
           </p>
         </motion.div>
       </div>
