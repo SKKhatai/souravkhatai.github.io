@@ -8,12 +8,12 @@
   }
 
   body {
-    @apply antialiased text-slate-800 bg-slate-50 dark:text-slate-100 dark:bg-slate-950;
+    @apply antialiased text-slate-800 bg-zinc-50 dark:text-slate-100 dark:bg-[#070816];
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-violet-600 dark:from-brand-400 dark:to-violet-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-fuchsia-500 to-pink-500 dark:from-brand-400 dark:via-fuchsia-400 dark:to-pink-400;
   }
 }
