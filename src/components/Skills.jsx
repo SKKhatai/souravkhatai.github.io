@@ -19,7 +19,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="scroll-mt-20 border-t border-slate-200/80 bg-slate-50 py-20 dark:border-slate-800 dark:bg-slate-950 sm:py-24"
+      className="scroll-mt-20 border-t border-slate-200/60 bg-transparent py-20 dark:border-slate-800/60 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionTitle
@@ -39,7 +39,7 @@ export default function Skills() {
               key={group.category}
               variants={item}
               transition={{ type: 'spring', stiffness: 380, damping: 26 }}
-              className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/60"
+              className="rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5"
             >
               <p className="font-display text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
                 {group.category}
@@ -48,7 +48,7 @@ export default function Skills() {
                 {group.items.map((name) => (
                   <li
                     key={name}
-                    className="inline-flex rounded-xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-800 transition hover:border-brand-300 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100 dark:hover:border-brand-500"
+                    className="inline-flex rounded-xl border border-slate-200/60 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-800 transition hover:border-brand-300 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-100 dark:hover:border-brand-500"
                   >
                     {name}
                   </li>

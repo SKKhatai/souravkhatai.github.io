@@ -33,7 +33,7 @@ export default function Navbar() {
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 transition-shadow duration-300 ${
         scrolled
-          ? 'border-b border-slate-200/80 bg-white/90 shadow-sm backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/90'
+          ? 'border-b border-slate-200/60 bg-white/70 shadow-sm backdrop-blur-md dark:border-slate-800/60 dark:bg-black/20'
           : 'bg-transparent'
       }`}
       initial={{ y: -24, opacity: 0 }}
@@ -67,7 +67,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={toggle}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-brand-600"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/60 bg-white/70 text-slate-700 backdrop-blur-sm transition hover:border-brand-300 hover:text-brand-600 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-200 dark:hover:border-brand-600"
             aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
           >
             {dark ? (
@@ -79,7 +79,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white md:hidden dark:border-slate-700 dark:bg-slate-900"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200/60 bg-white/70 backdrop-blur-sm md:hidden dark:border-slate-800/60 dark:bg-white/5"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-label="Toggle menu"
@@ -91,7 +91,7 @@ export default function Navbar() {
 
       {open && (
         <motion.div
-          className="border-t border-slate-200 bg-white px-4 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950"
+          className="border-t border-slate-200/60 bg-white/80 px-4 py-4 backdrop-blur-md md:hidden dark:border-slate-800/60 dark:bg-black/30"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0 }}

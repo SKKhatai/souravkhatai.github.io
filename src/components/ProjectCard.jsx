@@ -5,7 +5,7 @@ export default function ProjectCard({ project, index }) {
 
   return (
     <motion.article
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80 p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300/80 hover:shadow-xl hover:shadow-brand-600/10 dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-brand-500/50 dark:hover:shadow-brand-900/20"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-brand-300/80 hover:shadow-xl hover:shadow-brand-600/10 dark:border-slate-800/60 dark:bg-white/5 dark:hover:border-brand-500/50 dark:hover:shadow-brand-900/20"
       initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index }) {
         {stack.map((tech) => (
           <li
             key={tech}
-            className="rounded-lg bg-white px-2.5 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200 dark:bg-slate-800 dark:text-brand-300 dark:ring-brand-800"
+            className="rounded-lg bg-white/70 px-2.5 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200/70 dark:bg-white/5 dark:text-brand-300 dark:ring-brand-800/60"
           >
             {tech}
           </li>

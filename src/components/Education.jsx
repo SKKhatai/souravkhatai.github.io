@@ -6,7 +6,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="scroll-mt-20 border-t border-slate-200/80 bg-slate-50 py-20 dark:border-slate-800 dark:bg-slate-950 sm:py-24"
+      className="scroll-mt-20 border-t border-slate-200/60 bg-transparent py-20 dark:border-slate-800/60 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Education" title="Academics" subtitle="Formal foundations that support my engineering work." />
@@ -19,7 +19,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.45, delay: idx * 0.06 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900/60"
+              className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5"
             >
               <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{edu.degree}</h3>
               <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-400">{edu.school}</p>
