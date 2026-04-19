@@ -23,7 +23,7 @@ export default function App() {
         <Contact />
       </main>
       <footer className="border-t border-slate-200/80 bg-white py-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
-        <p>© {new Date().getFullYear()} Sourav Kumar Khatai. Built with React & Vite.</p>
+        <p>© {new Date().getFullYear()} Sourav Kumar Khatai</p>
       </footer>
     </div>
   );
