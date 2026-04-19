@@ -74,9 +74,9 @@ export const resumeEducation = [
 ];
 
 export const resumeCertifications = [
-  { name: 'HackerRank Certification', note: 'Link' },
-  { name: 'Cloud Computing (IIT Kharagpur)', note: 'Link' },
-  { name: 'NPTEL Software Testing (NIT)', note: 'Link' },
-  { name: 'Deep Learning (IIT Madras, NPTEL)', note: 'Link' },
+  { name: 'Advanced Java', note: 'https://drive.google.com/file/d/1g-r8QOmmfS6g2v2leI1f1L0KWJv4j53o/view?usp=sharing' },
+  { name: 'Cloud Computing (IIT Kharagpur)', note: 'https://drive.google.com/file/d/1uYN6uda0voxscf_YktH4f-TY8oeJ4Fzh/view?usp=drive_link' },
+  { name: 'NPTEL Software Testing (NIT)', note: 'https://drive.google.com/file/d/1tVsAybSrnywTjYpxfh_rNOfVsXHh29X0/view?usp=sharing' },
+  { name: 'Deep Learning (IIT Madras, NPTEL)', note: 'https://drive.google.com/file/d/1ju2iKPr35NCvipysLSCQHW1wI9j4nLCA/view?usp=sharing' },
 ];
 
