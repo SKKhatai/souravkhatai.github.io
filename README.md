@@ -92,15 +92,3 @@ npm run preview
 🧑‍💼 Admin panel for updates
 ✨ Enhanced animations & UI/UX
 📝 Blog section
-
-
-📬 Contact
-<p align="center"> <a href="mailto:your-email@example.com"> <img src="https://img.shields.io/badge/Email-Contact-blue?style=for-the-badge&logo=gmail" /> </a> <a href="https://linkedin.com/in/your-link"> <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" /> </a> </p>
-
-
-⭐ Support
-
-If you like this project, consider giving it a ⭐ on GitHub!
-
-
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=souravkhatai&label=Profile%20Views&color=0e75b6&style=flat" /> </p> ```
