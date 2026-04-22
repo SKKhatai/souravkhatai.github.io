@@ -20,11 +20,12 @@ export default function Experience() {
           {resumeExperience.map((role, idx) => (
             <motion.article
               key={`${role.company}-${role.title}`}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: idx * 0.06 }}
-              className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5"
+              transition={{ type: 'spring', stiffness: 200, damping: 20, delay: idx * 0.1 }}
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 dark:border-slate-800/60 dark:bg-white/5"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
@@ -40,7 +41,7 @@ export default function Experience() {
                     </span>
                   </div>
                 </div>
-                <p className="rounded-full border border-slate-200/60 bg-white/70 px-3 py-1 text-xs font-semibold text-slate-700 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-200">
+                <p className="rounded-full border border-white/60 bg-white/50 px-3 py-1 text-xs font-semibold text-slate-700 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-200">
                   {role.period}
                 </p>
               </div>
@@ -48,7 +49,7 @@ export default function Experience() {
               <ul className="mt-5 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {role.bullets.map((b) => (
                   <li key={b} className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-brand-500/80" aria-hidden />
+                    <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-orange-500/80 dark:bg-brand-500/80" aria-hidden />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -63,7 +64,7 @@ export default function Experience() {
 
 function NikeBadge() {
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/60 bg-white/70 px-2 py-0.5 text-[10px] font-extrabold tracking-[0.2em] text-slate-800 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-100">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/60 bg-white/50 px-2 py-0.5 text-[10px] font-extrabold tracking-[0.2em] text-slate-800 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-100">
       <img
         src={nikeSwoosh}
         alt=""
@@ -75,4 +76,3 @@ function NikeBadge() {
     </span>
   );
 }
-
