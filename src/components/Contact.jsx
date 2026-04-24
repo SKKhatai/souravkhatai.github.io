@@ -48,7 +48,11 @@ export default function Contact() {
             transition={{ duration: 0.45 }}
           >
             {socials.map((s) => (
-              <li key={s.label}>
+              <motion.li
+                key={s.label}
+                whileHover={{ x: 8 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              >
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   {s.label}
                 </p>
@@ -56,16 +60,16 @@ export default function Contact() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-1 block text-brand-600 transition hover:text-brand-800 dark:text-brand-400 dark:hover:text-brand-300"
+                  className="mt-1 block text-orange-600 transition hover:text-orange-800 dark:text-brand-400 dark:hover:text-brand-300"
                 >
                   {s.value}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </motion.ul>
 
           <motion.form
-            className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 lg:col-span-3"
+            className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 dark:border-slate-800/60 dark:bg-white/5 lg:col-span-3"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,7 +84,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   autoComplete="name"
-                  className="w-full rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none ring-brand-500/0 transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
+                  className="w-full rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm px-3 py-2.5 text-slate-900 outline-none ring-orange-500/0 transition focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="Your name"
                 />
               </label>
@@ -91,7 +95,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   autoComplete="email"
-                  className="w-full rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
+                  className="w-full rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm px-3 py-2.5 text-slate-900 outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="you@example.com"
                 />
               </label>
@@ -101,7 +105,7 @@ export default function Contact() {
                   required
                   name="message"
                   rows={4}
-                  className="w-full resize-y rounded-xl border border-slate-200/70 bg-white/80 px-3 py-2.5 text-slate-900 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/25 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
+                  className="w-full resize-y rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm px-3 py-2.5 text-slate-900 outline-none transition focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 dark:border-slate-800/70 dark:bg-white/5 dark:text-white"
                   placeholder="Tell me about your project or role…"
                 />
               </label>
@@ -111,7 +115,7 @@ export default function Contact() {
                 type="submit"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-brand-600/20 hover:bg-brand-700"
+                className="rounded-xl bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-orange-600/20 hover:bg-orange-700 dark:bg-brand-600 dark:shadow-brand-600/20 dark:hover:bg-brand-700"
               >
                 Send message
               </motion.button>

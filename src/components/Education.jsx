@@ -15,11 +15,12 @@ export default function Education() {
           {resumeEducation.map((edu, idx) => (
             <motion.article
               key={`${edu.degree}-${edu.school}`}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.45, delay: idx * 0.06 }}
-              className="rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5"
+              transition={{ type: 'spring', stiffness: 200, damping: 20, delay: idx * 0.1 }}
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 dark:border-slate-800/60 dark:bg-white/5"
             >
               <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{edu.degree}</h3>
               <p className="mt-1 text-sm font-medium text-slate-600 dark:text-slate-400">{edu.school}</p>
@@ -31,4 +32,3 @@ export default function Education() {
     </section>
   );
 }
-

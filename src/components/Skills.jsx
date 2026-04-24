@@ -6,13 +6,13 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.06 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, scale: 0.92 },
-  show: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0, rotateX: -25, y: 40 },
+  show: { opacity: 1, rotateX: 0, y: 0, transition: { type: 'spring', stiffness: 200, damping: 20 } },
 };
 
 export default function Skills() {
@@ -33,25 +33,26 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-40px' }}
+          style={{ perspective: 1000 }}
         >
           {resumeSkills.map((group) => (
             <motion.section
               key={group.category}
               variants={item}
-              transition={{ type: 'spring', stiffness: 380, damping: 26 }}
-              className="rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5"
+              className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 dark:border-slate-800/60 dark:bg-white/5"
             >
               <p className="font-display text-sm font-semibold tracking-tight text-slate-900 dark:text-white">
                 {group.category}
               </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((name) => (
-                  <li
+                  <motion.li
                     key={name}
-                    className="inline-flex rounded-xl border border-slate-200/60 bg-white/70 px-3 py-1.5 text-xs font-medium text-slate-800 transition hover:border-brand-300 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-100 dark:hover:border-brand-500"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="inline-flex rounded-xl border border-white/60 bg-white/50 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-slate-800 transition hover:border-orange-400 hover:text-orange-600 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-100 dark:hover:border-brand-500"
                   >
                     {name}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
             </motion.section>
