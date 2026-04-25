@@ -14,7 +14,7 @@ export default function About() {
           subtitle="SDE-1 profile: Java backend engineering with cloud fundamentals."
         />
         <motion.div
-          className="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+          className="mx-auto max-w-3xl space-y-5 rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 text-lg leading-relaxed text-slate-700 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-400"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -26,8 +26,8 @@ export default function About() {
             predictably under load.
           </p>
           <p>
-            On the Java side I work with <strong className="font-semibold text-slate-800 dark:text-slate-200">Java</strong> and{' '}
-            <strong className="font-semibold text-slate-800 dark:text-slate-200">Spring Boot</strong> to build modular applications
+            On the Java side I work with <strong className="font-semibold text-orange-600 dark:text-brand-300">Java</strong> and{' '}
+            <strong className="font-semibold text-orange-600 dark:text-brand-300">Spring Boot</strong> to build modular applications
             with clear layering, sensible boundaries, and testable components.
           </p>
           <p>

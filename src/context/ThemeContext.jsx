@@ -5,11 +5,7 @@ const ThemeContext = createContext(null);
 export function ThemeProvider({ children }) {
   const [dark, setDark] = useState(() => {
     if (typeof window === 'undefined') return false;
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      return savedTheme === 'dark';
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return localStorage.getItem('theme') === 'dark';
   });
 
   useEffect(() => {

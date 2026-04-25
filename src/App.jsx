@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import CustomCursor from './components/CustomCursor';
 import { motion } from 'framer-motion';
 
 export default function App() {
@@ -75,7 +76,7 @@ export default function App() {
           />
         </div>
       </div>
-
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />
