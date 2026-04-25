@@ -70,9 +70,9 @@ export default function Certifications() {
                 }
               }}
               className={[
-                'flex items-start justify-between gap-4 rounded-2xl border border-slate-200/60 bg-white/70 p-5 shadow-sm backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5',
+                'flex items-start justify-between gap-4 rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-5 dark:border-slate-800/60 dark:bg-white/5',
                 isProbablyUrl(c.note)
-                  ? 'cursor-pointer transition hover:border-slate-300/70 hover:bg-white/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60 dark:hover:border-slate-700/70 dark:hover:bg-white/10'
+                  ? 'cursor-pointer transition hover:border-orange-300/70 hover:bg-white/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500/60 dark:hover:border-slate-700/70 dark:hover:bg-white/10'
                   : '',
               ].join(' ')}
             >
@@ -86,7 +86,7 @@ export default function Certifications() {
                   )
                 ) : null}
               </div>
-              <span className="rounded-full border border-slate-200/60 bg-white/70 px-2.5 py-1 text-xs font-semibold text-slate-700 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-200">
+              <span className="rounded-full border border-white/60 bg-white/50 px-2.5 py-1 text-xs font-semibold text-slate-700 backdrop-blur-sm dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-200">
                 Verified
               </span>
             </motion.article>
@@ -147,4 +147,3 @@ export default function Certifications() {
     </section>
   );
 }
-

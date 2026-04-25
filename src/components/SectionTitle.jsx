@@ -10,7 +10,7 @@ export default function SectionTitle({ eyebrow, title, subtitle }) {
       transition={{ duration: 0.5 }}
     >
       {eyebrow && (
-        <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-brand-600 dark:text-brand-400">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-600 dark:text-brand-400">
           {eyebrow}
         </p>
       )}
