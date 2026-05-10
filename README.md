@@ -91,4 +91,3 @@ npm run preview
 🔗 Backend integration (Spring Boot APIs)
 🧑‍💼 Admin panel for updates
 ✨ Enhanced animations & UI/UX
-📝 Blog section
