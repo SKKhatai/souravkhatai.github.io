@@ -79,13 +79,9 @@ This portfolio is a **frontend-based project** built using React and Vite to sho
 npm install
 npm run dev
 
-Then open:
-👉 http://localhost:5173
 
 🏗️ Production Build
 npm run build
-npm run preview
-
 
 📈 Future Improvements
 🔗 Backend integration (Spring Boot APIs)
