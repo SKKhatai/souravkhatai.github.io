@@ -10,27 +10,27 @@ export default function ProjectCard({ project, index }) {
       <motion.article
         layoutId={`project-card-${title}`}
         onClick={() => setIsOpen(true)}
-        className="group relative flex flex-col cursor-pointer overflow-hidden rounded-2xl border border-slate-200/60 bg-white/70 p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:border-brand-300/80 hover:shadow-xl hover:shadow-brand-600/10 dark:border-slate-800/60 dark:bg-white/5 dark:hover:border-brand-500/50 dark:hover:shadow-brand-900/20"
+        className="glassmorphism group relative flex flex-col cursor-pointer overflow-hidden rounded-3xl p-6 transition duration-300 hover:border-cyber-cyan/40 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)]"
         initial={{ opacity: 0, y: 28 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-40px' }}
         transition={{ duration: 0.45, delay: index * 0.08 }}
         whileHover={{ scale: 1.02 }}
       >
-        <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-400/10 blur-2xl transition group-hover:bg-brand-400/20 dark:bg-brand-500/10 dark:group-hover:bg-brand-500/20" />
-        <motion.h3 layoutId={`project-title-${title}`} className="font-display text-xl font-semibold text-slate-900 dark:text-white">{title}</motion.h3>
-        <motion.p layoutId={`project-desc-${title}`} className="mt-3 flex-1 text-slate-600 dark:text-slate-400">{description}</motion.p>
+        <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-500/10 blur-2xl transition group-hover:bg-brand-500/20" />
+        <motion.h3 layoutId={`project-title-${title}`} className="font-futuristic text-xl font-bold text-slate-900 dark:text-white">{title}</motion.h3>
+        <motion.p layoutId={`project-desc-${title}`} className="mt-3 flex-1 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{description}</motion.p>
         <motion.ul layoutId={`project-stack-${title}`} className="mt-5 flex flex-wrap gap-2">
           {stack.map((tech) => (
             <li
               key={tech}
-              className="rounded-lg bg-white/70 px-2.5 py-1 text-xs font-medium text-brand-700 ring-1 ring-brand-200/70 dark:bg-white/5 dark:text-brand-300 dark:ring-brand-800/60"
+              className="rounded-lg bg-brand-500/10 px-2.5 py-1 text-xs font-semibold text-brand-400 border border-brand-500/20"
             >
               {tech}
             </li>
           ))}
         </motion.ul>
-        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-600 transition dark:text-brand-400">
+        <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyber-cyan transition hover:text-brand-400">
           Read Case Study
           <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
         </div>
@@ -48,20 +48,20 @@ export default function ProjectCard({ project, index }) {
 
             <motion.div
               layoutId={`project-card-${title}`}
-              className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-white p-6 shadow-2xl dark:bg-slate-900 sm:p-8"
+              className="glassmorphism relative w-full max-w-2xl overflow-hidden rounded-3xl p-6 border border-white/10 dark:border-white/5 sm:p-8"
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute right-4 top-4 rounded-full p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
+                className="absolute right-4 top-4 rounded-full p-2 text-slate-400 hover:bg-white/10 hover:text-white transition duration-300"
               >
                 <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
 
-              <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-400/10 blur-3xl dark:bg-brand-500/10" />
+              <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl" />
 
-              <motion.h3 layoutId={`project-title-${title}`} className="font-display text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+              <motion.h3 layoutId={`project-title-${title}`} className="font-futuristic text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl leading-tight">
                 {title}
               </motion.h3>
 
@@ -69,7 +69,7 @@ export default function ProjectCard({ project, index }) {
                 {stack.map((tech) => (
                   <li
                     key={tech}
-                    className="rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-medium text-brand-700 dark:bg-slate-800 dark:text-brand-300"
+                    className="rounded-lg bg-brand-500/10 px-2.5 py-1 text-xs font-semibold text-brand-400 border border-brand-500/20"
                   >
                     {tech}
                   </li>

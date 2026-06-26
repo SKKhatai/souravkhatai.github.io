@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className="min-h-screen relative">
       {/* Global Fluid Background (Light Mode) / Dark Mode Default */}
-      <div className="fixed inset-0 -z-20 w-screen h-screen bg-gradient-to-br from-orange-50 via-amber-50/50 to-orange-100/80 dark:bg-slate-950 dark:bg-none transition-colors duration-300 pointer-events-none">
+      <div className="fixed inset-0 -z-20 w-screen h-screen bg-gradient-to-br from-orange-50 via-amber-50/50 to-orange-100/80 dark:bg-transparent dark:bg-none transition-colors duration-300 pointer-events-none">
         {/* Animated Lava Lamp Blobs (Only visible in light mode, hidden in dark mode) */}
         <div className="absolute inset-0 overflow-hidden dark:hidden">
           <motion.div

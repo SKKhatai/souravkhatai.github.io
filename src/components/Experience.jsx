@@ -24,8 +24,8 @@ export default function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ type: 'spring', stiffness: 200, damping: 20, delay: idx * 0.1 }}
-              whileHover={{ scale: 1.02, y: -4 }}
-              className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 dark:border-slate-800/60 dark:bg-white/5"
+              whileHover={{ scale: 1.01, y: -4 }}
+              className="glassmorphism rounded-3xl p-6 transition duration-300 hover:border-brand-500/30 hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]"
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>

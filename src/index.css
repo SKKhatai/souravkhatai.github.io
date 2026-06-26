@@ -8,23 +8,62 @@
   }
 
   body {
-    @apply antialiased text-slate-800 dark:text-slate-100;
-    background-color: #fbfbfe;
-    background-image: radial-gradient(900px 360px at 10% -10%, rgba(255, 237, 213, 0.4), transparent 55%),
-      radial-gradient(800px 320px at 90% 10%, rgba(254, 215, 170, 0.3), transparent 60%),
-      linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(250, 250, 252, 1));
+    @apply antialiased text-slate-100;
+    background-color: #03030f;
+    background-image: 
+      radial-gradient(1000px 600px at 10% -10%, rgba(139, 92, 246, 0.18), transparent 60%),
+      radial-gradient(800px 500px at 90% 10%, rgba(6, 182, 212, 0.15), transparent 50%),
+      linear-gradient(180deg, #03030f 0%, #060618 50%, #02020a 100%);
   }
 
-  .dark body {
-    background-color: #070816;
-    background-image: radial-gradient(900px 360px at 10% -10%, rgba(129, 140, 248, 0.22), transparent 55%),
-      radial-gradient(800px 320px at 90% 10%, rgba(244, 114, 182, 0.18), transparent 60%),
-      linear-gradient(180deg, rgba(7, 8, 22, 1), rgba(5, 6, 18, 1));
+  /* When light mode is active explicitly, style the body */
+  html:not(.dark) body {
+    @apply text-slate-800;
+    background-color: #f6f8fd;
+    background-image: 
+      radial-gradient(1000px 600px at 10% -10%, rgba(139, 92, 246, 0.08), transparent 60%),
+      radial-gradient(800px 500px at 90% 10%, rgba(244, 63, 94, 0.06), transparent 50%),
+      linear-gradient(180deg, #f6f8fd 0%, #edf1f7 50%, #e4eaf3 100%);
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #03030f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.6);
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-orange-600 via-amber-500 to-rose-500 dark:from-brand-400 dark:via-fuchsia-400 dark:to-pink-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 via-fuchsia-400 to-cyber-cyan;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400;
+  }
+
+  .glassmorphism {
+    @apply bg-cyber-card border border-cyber-border backdrop-blur-xl shadow-2xl shadow-black/30;
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.15), inset 0 0 15px rgba(139, 92, 246, 0.05);
+  }
+
+  .neon-border-cyan {
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.15), inset 0 0 15px rgba(6, 182, 212, 0.05);
   }
 }

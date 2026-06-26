@@ -1,43 +1,19 @@
 export const resumeSkills = [
   {
-    category: 'Programming',
-    items: ['Java (Core & Advanced)', 'Python (Basic)'],
+    category: 'Backend & Databases',
+    items: ['Java', 'Spring Boot', 'Spring MVC', 'Hibernate', 'JPA', 'JDBC', 'RESTful APIs', 'Microservices', 'MySQL', 'Oracle SQL', 'PostgreSQL', 'DynamoDB'],
   },
   {
-    category: 'Concepts',
-    items: ['OOP', 'Exception Handling', 'Collections Framework', 'TDD (Test-Driven Development)'],
+    category: 'Frontend Development',
+    items: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Framer Motion', 'Responsive Web Design'],
   },
   {
-    category: 'Frameworks & Libraries',
-    items: ['Spring Boot', 'Spring MVC', 'Hibernate', 'JPA', 'JDBC'],
+    category: 'Cloud, DevOps & Tools',
+    items: ['AWS (EC2, S3, Lambda, IAM)', 'Docker', 'Git', 'GitHub', 'Maven', 'Gradle', 'Jenkins (CI/CD)', 'Splunk', 'Linux', 'VS Code', 'Eclipse', 'Jira'],
   },
   {
-    category: 'Backend & Architecture',
-    items: ['RESTful APIs', 'Microservices Architecture'],
-  },
-  {
-    category: 'Cloud & DevOps',
-    items: ['AWS (EC2, S3, Lambda, IAM)', 'Docker', 'Linux', 'Networking Basics'],
-  },
-  {
-    category: 'Databases',
-    items: ['MySQL', 'Oracle', 'DynamoDB (NoSQL)'],
-  },
-  {
-    category: 'Observability & ITSM',
-    items: ['Splunk', 'Jenkins', 'ServiceNow', 'Jira'],
-  },
-  {
-    category: 'Version Control & Tools',
-    items: ['Git', 'GitHub', 'Eclipse', 'VS Code', 'Gradle', 'Maven'],
-  },
-  {
-    category: 'Methodologies',
-    items: ['Agile', 'Scrum', 'SDLC', 'Incident / Problem / Change Management'],
-  },
-  {
-    category: 'DSA',
-    items: ['Linked List', 'Stack', 'Queue', 'Set', 'Map', 'Tree', 'Graph', 'Design & Algorithm'],
+    category: 'CS Fundamentals & Methods',
+    items: ['Data Structures & Algorithms', 'OOP (Object-Oriented Programming)', 'TDD (Test-Driven Development)', 'Agile/Scrum', 'Problem / Incident Management'],
   },
 ];
 
@@ -79,4 +55,24 @@ export const resumeCertifications = [
   { name: 'NPTEL Software Testing (NIT)', note: 'https://drive.google.com/file/d/1tVsAybSrnywTjYpxfh_rNOfVsXHh29X0/view?usp=sharing' },
   { name: 'Deep Learning (IIT Madras, NPTEL)', note: 'https://drive.google.com/file/d/1ju2iKPr35NCvipysLSCQHW1wI9j4nLCA/view?usp=sharing' },
 ];
+
+export const resumeProjects = [
+  {
+    title: 'Supply Chain Management System',
+    description:
+      'End-to-end platform for inventory, orders, and supplier workflows. Includes role-based access, reporting endpoints, and transactional consistency for stock movements.',
+    details: 'Built with Spring Boot and Spring Security for robust authentication. Employs MySQL with optimized indexes and JPA/Hibernate for complex relational querying. Achieved high transactional consistency across concurrent order processing, reducing race conditions and inventory drift. Deployed APIs follow strictly RESTful principles with structured error handling and DTO mappings.',
+    stack: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'REST APIs'],
+    github: 'https://github.com/yourusername/supply-chain-spring',
+  },
+  {
+    title: 'Student Management System',
+    description:
+      'Web application for managing students, courses, and enrollments. Features CRUD modules, validation, and an admin-friendly dashboard backed by a relational schema.',
+    details: 'Developed a robust monolithic backend utilizing Spring Boot. Implemented strict data validation rules to ensure data integrity before persistence in MySQL. Integrated an MVC architecture to handle frontend templating or API JSON responses dynamically. Simplified deployment and configuration using Maven and Spring properties profiles across environments.',
+    stack: ['Java', 'Spring Boot', 'MySQL', 'REST APIs', 'JavaScript'],
+    github: 'https://github.com/yourusername/student-management-spring',
+  },
+];
+
 

@@ -14,7 +14,7 @@ export default function About() {
           subtitle="SDE-1 profile: Java backend engineering with cloud fundamentals."
         />
         <motion.div
-          className="mx-auto max-w-3xl space-y-5 rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-8 text-lg leading-relaxed text-slate-700 dark:border-slate-800/60 dark:bg-white/5 dark:text-slate-400"
+          className="glassmorphism mx-auto max-w-3xl space-y-5 rounded-3xl p-8 text-lg leading-relaxed text-slate-700 dark:text-slate-300 border border-white/10 dark:border-white/5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
