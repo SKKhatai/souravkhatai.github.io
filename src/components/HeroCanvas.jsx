@@ -10,9 +10,9 @@ function InteractiveScene({ dark }) {
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
     
-    // Normalized mouse coordinates
-    const targetX = state.pointer.x * 1.5;
-    const targetY = state.pointer.y * 1.5;
+    // Normalized mouse coordinates (reduced translation to prevent clipping)
+    const targetX = state.pointer.x * 0.7;
+    const targetY = state.pointer.y * 0.7;
     
     // Main morphing blob tracking mouse
     if (blobRef.current) {
@@ -26,14 +26,14 @@ function InteractiveScene({ dark }) {
     if (torusRef.current) {
       torusRef.current.rotation.x = -time * 0.1;
       torusRef.current.rotation.y = -time * 0.15;
-      torusRef.current.position.x += (targetX * 0.6 - torusRef.current.position.x) * 0.03;
-      torusRef.current.position.y += (targetY * 0.6 - torusRef.current.position.y) * 0.03;
+      torusRef.current.position.x += (targetX * 0.5 - torusRef.current.position.x) * 0.03;
+      torusRef.current.position.y += (targetY * 0.5 - torusRef.current.position.y) * 0.03;
     }
 
     // Specular point light tracking mouse
     if (lightRef.current) {
-      lightRef.current.position.x += (state.pointer.x * 4 - lightRef.current.position.x) * 0.1;
-      lightRef.current.position.y += (state.pointer.y * 4 - lightRef.current.position.y) * 0.1;
+      lightRef.current.position.x += (state.pointer.x * 3 - lightRef.current.position.x) * 0.1;
+      lightRef.current.position.y += (state.pointer.y * 3 - lightRef.current.position.y) * 0.1;
     }
   });
 
@@ -46,7 +46,7 @@ function InteractiveScene({ dark }) {
       
       {/* Morphing Liquid Sphere */}
       <Float speed={2.5} rotationIntensity={1} floatIntensity={1.5}>
-        <mesh ref={blobRef} scale={1.8} position={[0, 0, 0]}>
+        <mesh ref={blobRef} scale={1.3} position={[0, 0, 0]}>
           <sphereGeometry args={[1, 64, 64]} />
           <MeshDistortMaterial
             color={dark ? "#a855f7" : "#8b5cf6"}
@@ -62,7 +62,7 @@ function InteractiveScene({ dark }) {
 
       {/* Wireframe Torus Knot floating in background */}
       <Float speed={1.5} rotationIntensity={2} floatIntensity={1}>
-        <mesh ref={torusRef} scale={2.6} position={[0, 0, -1.8]}>
+        <mesh ref={torusRef} scale={1.8} position={[0, 0, -1.5]}>
           <torusKnotGeometry args={[1, 0.28, 100, 16]} />
           <meshPhysicalMaterial
             color={dark ? "#06b6d4" : "#ec4899"}
@@ -111,7 +111,7 @@ export default function HeroCanvas({ dark }) {
       <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-brand-600/10 to-cyber-cyan/10 blur-3xl" />
       
       <Canvas
-        camera={{ position: [0, 0, 5], fov: 60 }}
+        camera={{ position: [0, 0, 6], fov: 50 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true }}
       >

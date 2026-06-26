@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 export default function ProjectCard({ project, index }) {
-  const { title, description, stack, github, details } = project;
+  const { title, description, stack, github, details, demo } = project;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +18,7 @@ export default function ProjectCard({ project, index }) {
         whileHover={{ scale: 1.02 }}
       >
         <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-500/10 blur-2xl transition group-hover:bg-brand-500/20" />
-        <motion.h3 layoutId={`project-title-${title}`} className="font-futuristic text-xl font-bold text-slate-900 dark:text-white">{title}</motion.h3>
+        <motion.h3 layoutId={`project-title-${title}`} className="font-display text-xl font-bold text-slate-900 dark:text-white">{title}</motion.h3>
         <motion.p layoutId={`project-desc-${title}`} className="mt-3 flex-1 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{description}</motion.p>
         <motion.ul layoutId={`project-stack-${title}`} className="mt-5 flex flex-wrap gap-2">
           {stack.map((tech) => (
@@ -61,7 +61,7 @@ export default function ProjectCard({ project, index }) {
 
               <motion.div layoutId={`project-bg-${title}`} className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-500/10 blur-3xl" />
 
-              <motion.h3 layoutId={`project-title-${title}`} className="font-futuristic text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl leading-tight">
+              <motion.h3 layoutId={`project-title-${title}`} className="font-display text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl leading-tight">
                 {title}
               </motion.h3>
 
@@ -90,7 +90,7 @@ export default function ProjectCard({ project, index }) {
                 )}
               </div>
 
-              <motion.div className="mt-8" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+              <motion.div className="mt-8 flex flex-wrap gap-3" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
                 <a
                   href={github}
                   target="_blank"
@@ -102,6 +102,19 @@ export default function ProjectCard({ project, index }) {
                   </svg>
                   View Source Code
                 </a>
+                {demo && (
+                  <a
+                    href={demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-700 shadow-md shadow-brand-500/10"
+                  >
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Live Demo
+                  </a>
+                )}
               </motion.div>
             </motion.div>
           </motion.div>

@@ -43,11 +43,11 @@ export default function Hero() {
 
             <motion.h1 
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
-              className="font-futuristic text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white leading-[1.1]"
+              className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl dark:text-white leading-[1.1]"
             >
               Hi, I&apos;m{' '}
               <motion.span
-                className="inline-block text-gradient cursor-default font-futuristic"
+                className="inline-block text-gradient cursor-default font-display"
                 whileHover={{ scale: 1.03, rotate: -0.5 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
@@ -59,7 +59,7 @@ export default function Hero() {
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0 } }} 
               className="mt-4 text-xl font-display font-medium text-brand-600 dark:text-brand-400 sm:text-2xl"
             >
-              SDE-1 · Java Backend · Cloud
+              Software Engineer Apprentice
             </motion.p>
 
             <motion.p 

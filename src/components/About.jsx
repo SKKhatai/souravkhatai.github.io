@@ -11,7 +11,7 @@ export default function About() {
         <SectionTitle
           eyebrow="About me"
           title="Background & focus"
-          subtitle="SDE-1 profile: Java backend engineering with cloud fundamentals."
+          subtitle="Software Engineer Apprentice: Java backend engineering with cloud fundamentals."
         />
         <motion.div
           className="glassmorphism mx-auto max-w-3xl space-y-5 rounded-3xl p-8 text-lg leading-relaxed text-slate-700 dark:text-slate-300 border border-white/10 dark:border-white/5"

@@ -70,7 +70,7 @@ export default function Skills() {
               {[...marqueeSkills, ...marqueeSkills].map((skill, index) => (
                 <div
                   key={`m1-${skill}-${index}`}
-                  className="glassmorphism inline-flex items-center gap-2 rounded-2xl border-white/10 dark:border-white/5 bg-white/5 backdrop-blur-md px-6 py-3.5 text-sm font-semibold tracking-wide text-white hover:border-brand-500/50 hover:bg-brand-500/10 transition-all duration-300"
+                  className="glassmorphism inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold tracking-wide text-slate-800 dark:text-white hover:border-brand-500/50 hover:bg-brand-500/10 transition-all duration-300"
                 >
                   <span className="h-2 w-2 rounded-full bg-brand-400" />
                   {skill}
@@ -85,7 +85,7 @@ export default function Skills() {
               {[...marqueeSkills, ...marqueeSkills].reverse().map((skill, index) => (
                 <div
                   key={`m2-${skill}-${index}`}
-                  className="glassmorphism inline-flex items-center gap-2 rounded-2xl border-white/10 dark:border-white/5 bg-white/5 backdrop-blur-md px-6 py-3.5 text-sm font-semibold tracking-wide text-white hover:border-cyber-cyan/50 hover:bg-cyber-cyan/10 transition-all duration-300"
+                  className="glassmorphism inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-semibold tracking-wide text-slate-800 dark:text-white hover:border-cyber-cyan/50 hover:bg-cyber-cyan/10 transition-all duration-300"
                 >
                   <span className="h-2 w-2 rounded-full bg-cyber-cyan" />
                   {skill}
@@ -123,7 +123,7 @@ export default function Skills() {
                 className={`glassmorphism rounded-3xl p-6 border transition-all duration-500 hover:-translate-y-1.5 ${glowClass}`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="font-futuristic text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+                  <h3 className="font-display text-lg font-bold tracking-tight text-slate-900 dark:text-white">
                     {group.category}
                   </h3>
                   <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400 opacity-60">

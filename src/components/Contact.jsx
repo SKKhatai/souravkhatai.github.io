@@ -69,7 +69,7 @@ export default function Contact() {
           </motion.ul>
 
           <motion.form
-            className="rounded-2xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-6 dark:border-slate-800/60 dark:bg-white/5 lg:col-span-3"
+            className="glassmorphism rounded-3xl p-6 lg:col-span-3 border border-white/10 dark:border-white/5"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 16 }}
             whileInView={{ opacity: 1, x: 0 }}
