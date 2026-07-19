@@ -4,17 +4,19 @@ import { resumeSkills } from '../data/resumeData';
 
 // Accent theme colors per category for glowing border/shadow effects
 const categoryGlows = {
-  'Backend & Databases': 'hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] hover:border-purple-500/40 border-purple-500/10 dark:border-purple-500/10',
-  'Frontend Development': 'hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-500/40 border-cyan-500/10 dark:border-cyan-500/10',
-  'Cloud, DevOps & Tools': 'hover:shadow-[0_0_25px_rgba(244,63,94,0.15)] hover:border-rose-500/40 border-rose-500/10 dark:border-rose-500/10',
-  'CS Fundamentals & Methods': 'hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] hover:border-amber-500/40 border-amber-500/10 dark:border-amber-500/10',
+  'Core Languages & Frameworks': 'hover:shadow-[0_0_25px_rgba(168,85,247,0.15)] hover:border-purple-500/40 border-purple-500/10 dark:border-purple-500/10',
+  'Databases & Messaging': 'hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:border-cyan-500/40 border-cyan-500/10 dark:border-cyan-500/10',
+  'DevOps & Developer Tools': 'hover:shadow-[0_0_25px_rgba(244,63,94,0.15)] hover:border-rose-500/40 border-rose-500/10 dark:border-rose-500/10',
+  'Testing & Observability': 'hover:shadow-[0_0_25px_rgba(245,158,11,0.15)] hover:border-amber-500/40 border-amber-500/10 dark:border-amber-500/10',
+  'Frontend Technologies': 'hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] hover:border-emerald-500/40 border-emerald-500/10 dark:border-emerald-500/10',
 };
 
 const categoryBadgeGlows = {
-  'Backend & Databases': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-  'Frontend Development': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-  'Cloud, DevOps & Tools': 'bg-rose-500/10 text-rose-400 border-rose-500/20',
-  'CS Fundamentals & Methods': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  'Core Languages & Frameworks': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+  'Databases & Messaging': 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
+  'DevOps & Developer Tools': 'bg-rose-500/10 text-rose-400 border-rose-500/20',
+  'Testing & Observability': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  'Frontend Technologies': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
 };
 
 const marqueeSkills = [

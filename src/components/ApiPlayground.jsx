@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 import { resumeSkills, resumeExperience, resumeProjects } from '../data/resumeData';
+import API_BASE_URL from '../utils/api';
 
 // Custom regex-based JSON syntax highlighter
 function highlightJson(json) {
@@ -96,23 +97,48 @@ export default function ApiPlayground() {
     }
   };
 
-  const handleSendRequest = () => {
+  const handleSendRequest = async () => {
     setLoading(true);
     setResponseBody(null);
     setResponseStatus(null);
     
-    // Simulate real-world network latency (300ms - 800ms)
-    const randomLatency = Math.floor(Math.random() * 500) + 200;
-    setTimeout(() => {
-      const routeData = endpoints[selectedRoute] || { error: "404 Not Found" };
-      setLatency(randomLatency);
-      setResponseStatus(routeData.statusCode || 200);
-      setResponseBody(routeData);
+    const startTime = Date.now();
+    
+    try {
+      const response = await fetch(`${API_BASE_URL}${selectedRoute}`, {
+        method: method,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: method === 'POST' ? JSON.stringify({
+          name: "Playground Recruiter",
+          email: "recruiter@playground.com",
+          message: "Hello from the API Playground client!"
+        }) : null
+      });
+      
+      const data = await response.json();
+      const endTime = Date.now();
+      
+      setLatency(endTime - startTime);
+      setResponseStatus(response.status);
+      setResponseBody(data);
+    } catch (err) {
+      console.warn("Backend API not reachable. Falling back to local static mock data.", err);
+      // Simulate real-world network latency (300ms - 800ms) for the mock fallback
+      const randomLatency = Math.floor(Math.random() * 500) + 200;
+      setTimeout(() => {
+        const routeData = endpoints[selectedRoute] || { error: "404 Not Found" };
+        setLatency(randomLatency);
+        setResponseStatus(routeData.statusCode || 200);
+        setResponseBody(routeData);
+      }, randomLatency);
+    } finally {
       setLoading(false);
-    }, randomLatency);
+    }
   };
 
-  const executeCliCommand = (cmdText) => {
+  const executeCliCommand = async (cmdText) => {
     const rawCmd = cmdText.trim();
     if (!rawCmd) return;
     
@@ -154,20 +180,48 @@ export default function ApiPlayground() {
       case 'curl':
         if (!arg) {
           newHistory.push({ type: 'error', text: 'Error: Endpoint missing. Usage: curl /profile, curl /skills, curl /projects' });
-        } else if (endpoints[arg]) {
-          newHistory.push({ type: 'output', html: highlightJson(endpoints[arg]) });
         } else {
-          newHistory.push({ type: 'error', text: `Error: 404 Route "${arg}" not found. Try: /profile, /skills, /projects, /experience, /contact` });
+          try {
+            const response = await fetch(`${API_BASE_URL}${arg}`);
+            const data = await response.json();
+            newHistory.push({ type: 'output', html: highlightJson(data) });
+          } catch (err) {
+            console.warn("Backend not reachable for curl, falling back to local endpoints: ", err);
+            if (endpoints[arg]) {
+              newHistory.push({ type: 'output', html: highlightJson(endpoints[arg]) });
+            } else {
+              newHistory.push({ type: 'error', text: `Error: 404 Route "${arg}" not found. Try: /profile, /skills, /projects, /experience, /contact` });
+            }
+          }
         }
         break;
+
       case 'skills':
-        newHistory.push({ type: 'output', html: highlightJson(resumeSkills) });
+        try {
+          const response = await fetch(`${API_BASE_URL}/skills`);
+          const data = await response.json();
+          newHistory.push({ type: 'output', html: highlightJson(data) });
+        } catch {
+          newHistory.push({ type: 'output', html: highlightJson(resumeSkills) });
+        }
         break;
       case 'projects':
-        newHistory.push({ type: 'output', html: highlightJson(resumeProjects) });
+        try {
+          const response = await fetch(`${API_BASE_URL}/projects`);
+          const data = await response.json();
+          newHistory.push({ type: 'output', html: highlightJson(data) });
+        } catch {
+          newHistory.push({ type: 'output', html: highlightJson(resumeProjects) });
+        }
         break;
       case 'experience':
-        newHistory.push({ type: 'output', html: highlightJson(resumeExperience) });
+        try {
+          const response = await fetch(`${API_BASE_URL}/experience`);
+          const data = await response.json();
+          newHistory.push({ type: 'output', html: highlightJson(data) });
+        } catch {
+          newHistory.push({ type: 'output', html: highlightJson(resumeExperience) });
+        }
         break;
       default:
         newHistory.push({ type: 'error', text: `Command not found: "${command}". Type "help" to see available commands.` });
@@ -177,17 +231,29 @@ export default function ApiPlayground() {
     setCliInput('');
   };
 
-  const handleCliSubmit = (e) => {
+  const handleCliSubmit = async (e) => {
     e.preventDefault();
-    executeCliCommand(cliInput);
+    await executeCliCommand(cliInput);
   };
 
   // Pre-load profile response on mount
   useEffect(() => {
-    setResponseStatus(200);
-    setLatency(45);
-    setResponseBody(endpoints['/profile']);
+    const fetchInitialData = async () => {
+      try {
+        const response = await fetch(`${API_BASE_URL}/profile`);
+        const data = await response.json();
+        setLatency(20);
+        setResponseStatus(200);
+        setResponseBody(data);
+      } catch (err) {
+        setResponseStatus(200);
+        setLatency(45);
+        setResponseBody(endpoints['/profile']);
+      }
+    };
+    fetchInitialData();
   }, []);
+
 
   return (
     <section

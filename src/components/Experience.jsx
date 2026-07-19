@@ -46,6 +46,28 @@ export default function Experience() {
                 </p>
               </div>
 
+              {/* Large Metric Callouts (Nike Spotlight) */}
+              {role.company.includes('Nike') && (
+                <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4 select-none">
+                  <div className="rounded-2xl border border-orange-500/20 bg-orange-500/5 p-4 text-center dark:border-brand-500/20 dark:bg-brand-500/5">
+                    <span className="block text-2xl font-bold text-orange-600 dark:text-brand-400">50%</span>
+                    <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">MTTR Reduction</span>
+                  </div>
+                  <div className="rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 text-center dark:border-cyan-500/20 dark:bg-cyan-500/5">
+                    <span className="block text-2xl font-bold text-cyan-500">95%+</span>
+                    <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Code Coverage</span>
+                  </div>
+                  <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-4 text-center dark:border-rose-500/20 dark:bg-rose-500/5">
+                    <span className="block text-2xl font-bold text-rose-500">Java 21</span>
+                    <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Microservice Migration</span>
+                  </div>
+                  <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-center dark:border-amber-500/20 dark:bg-amber-500/5">
+                    <span className="block text-2xl font-bold text-amber-500">AWS</span>
+                    <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">Cloud Microservices</span>
+                  </div>
+                </div>
+              )}
+
               <ul className="mt-5 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {role.bullets.map((b) => (
                   <li key={b} className="flex gap-2">

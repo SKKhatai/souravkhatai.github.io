@@ -1,23 +1,23 @@
 export const resumeSkills = [
   {
-    category: 'Programming Languages',
-    items: ['Java', 'Python'],
+    category: 'Core Languages & Frameworks',
+    items: ['Java (Java 8/11/21)', 'Spring Boot 3.x', 'Hibernate/JPA', 'Spring Cloud Gateway', 'RESTful Microservices', 'Data Structures & Algorithms (DSA)'],
   },
   {
-    category: 'Backend & System Design',
-    items: ['REST APIs', 'Microservices Architecture', 'Distributed Systems', 'System Design Fundamentals'],
+    category: 'Databases & Messaging',
+    items: ['PostgreSQL', 'MySQL', 'Apache Kafka', 'Redis Caching'],
   },
   {
-    category: 'Databases & Version Control',
-    items: ['Databases (SQL/NoSQL)', 'MySQL', 'DynamoDB', 'Git (Version Control)', 'GitHub'],
+    category: 'DevOps & Developer Tools',
+    items: ['Docker', 'Kubernetes', 'AWS (EC2, S3, RDS, ECS, VPC, CloudWatch, IAM)', 'OpenShift', 'Maven', 'Gradle', 'Git', 'GitHub', 'CI/CD Pipelines'],
   },
   {
-    category: 'Cloud, Caching & Messaging',
-    items: ['AWS', 'Google Cloud Platform (GCP)', 'Message Queues (Kafka)', 'Caching Systems (Redis)'],
+    category: 'Testing & Observability',
+    items: ['JUnit', 'Mockito', 'RestAssured', 'Postman', 'Bruno', 'Splunk', 'New Relic'],
   },
   {
-    category: 'Core Fundamentals & DevOps',
-    items: ['Data Structures', 'Algorithms', 'CI/CD Pipelines', 'Docker', 'Jenkins', 'Splunk'],
+    category: 'Frontend Technologies',
+    items: ['HTML5', 'CSS3', 'JavaScript', 'React'],
   },
 ];
 
@@ -28,13 +28,12 @@ export const resumeExperience = [
     title: 'Software Engineer (Apprentice)',
     period: 'August 2025 – Present',
     bullets: [
-      'Backend Services & APIs: Built and maintained backend services, REST APIs, and business-critical systems using Java, improving service reliability by 15% and successfully supporting high-traffic applications.',
-      'Clean & Well-Tested Code: Wrote clean, maintainable, and well-tested code, achieving 95% automated test coverage and reducing post-deployment bugs by 30%.',
-      'Production Debugging & Reliability: Debugged complex production issues and improved system performance and reliability, reducing Mean Time to Resolution (MTTR) by 50%.',
-      'Cross-Functional Collaboration: Collaborated with product, design, and operations teams to design scalable solutions and deliver 3+ impactful backend features.',
-      'Code Reviews & Version Control: Participated in peer code reviews and contributed to engineering best practices, managing all codebase updates via Git version control.',
-      'Cloud, Caching & Message Queues: Integrated backend systems with AWS/GCP cloud platforms, message queues (Kafka), and caching systems (Redis), enhancing distributed systems throughput by 25%.',
-      'CI/CD Pipelines & Automation: Built and maintained automated CI/CD pipelines, reducing deployment cycle times by 30% and ensuring seamless delivery of features.'
+      'Developed high-throughput Java/Spring Boot microservices, implementing TTL (Time-To-Live) data retention rules to automatically purge order records after 3 months, optimizing database storage.',
+      'Spearheaded the migration of core backend services from Java 8/11 to Java 21 and Spring Boot 2.x to 3.x, resolving critical security vulnerabilities across microservices.',
+      'Architected and configured isolated developer-specific CI/CD pipelines using Gradle to ensure local code testing did not disrupt the main testing/staging environment.',
+      'Optimized application logging by establishing standardized logging guidelines and debugged memory leaks using Splunk, reducing MTTR by 50%.',
+      'Designed robust unit and integration test suites using JUnit, Mockito, and RestAssured, securing 95%+ code coverage under Test-Driven Development (TDD).',
+      'Conducted requirements analysis and technical design for cloud backend microservices, collaborating with team leads to mitigate technical risks.'
     ],
   },
 ];
@@ -54,7 +53,7 @@ export const resumeEducation = [
 
 export const resumeCertifications = [
   { name: 'AWS Cloud Practitioner Essentials', note: 'Amazon Web Services Training' },
-  { name: 'Solved 150+ Data Structures & Algorithms problems on LeetCode', note: 'Problem Solving Profile' },
+  { name: 'Solved 200+ Data Structures & Algorithms problems on LeetCode', note: 'Problem Solving Profile' },
   { name: 'Familiarity with secure coding guidelines for backend API security', note: 'Secure SDE Coding Best Practices' },
   { name: 'Advanced Java (SCALER)', note: 'https://drive.google.com/file/d/1g-r8QOmmfS6g2v2leI1f1L0KWJv4j53o/view?usp=sharing' },
   { name: 'Cloud Computing (IIT Kharagpur, NPTEL)', note: 'https://drive.google.com/file/d/1uYN6uda0voxscf_YktH4f-TY8oeJ4Fzh/view?usp=drive_link' },
@@ -64,6 +63,14 @@ export const resumeCertifications = [
 
 export const resumeProjects = [
   {
+    title: 'HypeStream - Event-Driven E-Commerce System',
+    description:
+      'Designed an event-driven stock deduction loop using Spring Boot and Apache Kafka to decouple order and inventory services, reducing checkout latency by 35% under high concurrency.',
+    details: 'Architected a microservices layout using Spring Cloud Gateway and Eureka for resilient load balancing. Optimized local build environments by migrating to a Gradle Multi-Project structure (Java 21), securing a 40% reduction in compile and build times. Resolved Docker JVM container crashes by upgrading ZooKeeper/Kafka images to 7.5.0, securing 99.9% uptime.',
+    stack: ['Java 21', 'Spring Boot 3.x', 'Spring Cloud Gateway', 'Netflix Eureka', 'Apache Kafka', 'MySQL', 'Redis', 'Docker', 'Gradle Multi-Project'],
+    github: 'https://github.com/souravkhatai6/HypeStream',
+  },
+  {
     title: 'Supply Chain Management System',
     description:
       'Designed and developed a fully backend Supply Chain Management System using Java and Spring Boot. Connected backend services to database systems, designing optimized schemas and queries to handle transaction flows.',
@@ -71,13 +78,5 @@ export const resumeProjects = [
     stack: ['Java', 'Spring Boot', 'Kafka', 'Redis', 'Git', 'CI/CD'],
     github: 'https://github.com/souravkhatai6/supply-chain-spring',
   },
-  {
-    title: 'eKart - Live E-Commerce Web App',
-    description:
-      'Developed responsive client-facing frontend user interfaces and flows using React 18, Vite, and Tailwind CSS. Integrated front-end interactive UI components with backend REST APIs.',
-    details: 'Optimized client-side page load times and user experience. Wrote responsive styles and reusable UI components, improving mobile device compatibility and loading speed by 20%. Utilized Git for codebase version control, managing clean feature branches and testing client responsiveness.',
-    stack: ['React 18', 'Vite', 'Tailwind CSS', 'REST APIs', 'Git'],
-    github: 'https://github.com/souravkhatai6/ekart-frontend',
-    demo: 'https://ekart-sourav.vercel.app'
-  },
 ];
+

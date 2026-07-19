@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
+import API_BASE_URL from '../utils/api';
 
 const socials = [
   {
@@ -22,10 +23,42 @@ const socials = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError(null);
+    setSubmitted(false);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server returned HTTP ${response.status}`);
+      }
+
+      setSubmitted(true);
+      e.target.reset(); // clear form inputs on success
+    } catch (err) {
+      setError(err.message || 'Connection failed. Please ensure the backend is running.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -37,7 +70,7 @@ export default function Contact() {
         <SectionTitle
           eyebrow="Contact"
           title="Let's connect"
-          subtitle=" Demo form is not sending data anywhere."
+          subtitle="Get in touch. Message will be stored and notified directly."
         />
         <div className="mx-auto grid max-w-4xl gap-12 lg:grid-cols-5">
           <motion.ul
@@ -113,15 +146,21 @@ export default function Contact() {
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="rounded-xl bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-orange-600/20 hover:bg-orange-700 dark:bg-brand-600 dark:shadow-brand-600/20 dark:hover:bg-brand-700"
+                disabled={loading}
+                whileHover={loading ? {} : { scale: 1.02 }}
+                whileTap={loading ? {} : { scale: 0.98 }}
+                className="rounded-xl bg-orange-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-orange-600/20 hover:bg-orange-700 disabled:opacity-50 dark:bg-brand-600 dark:shadow-brand-600/20 dark:hover:bg-brand-700"
               >
-                Send message
+                {loading ? 'Sending...' : 'Send message'}
               </motion.button>
               {submitted && (
-                <p className="text-sm text-emerald-600 dark:text-emerald-400" role="status">
-                  Thanks — this demo form doesn&apos;t send data anywhere.
+                <p className="text-sm text-emerald-600 dark:text-emerald-400 font-medium" role="status">
+                  Success! Your message was received and queued in the mailbox system.
+                </p>
+              )}
+              {error && (
+                <p className="text-sm text-rose-500 dark:text-rose-400 font-medium" role="alert">
+                  Error: {error}
                 </p>
               )}
             </div>
