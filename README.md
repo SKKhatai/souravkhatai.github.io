@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Java Backend Developer</b><br/>
-  Showcasing my skills, projects, and experience
+  Showcasing my skills, projects, experience and contributions
 </p>
 
 ---
