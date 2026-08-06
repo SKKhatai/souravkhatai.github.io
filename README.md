@@ -59,7 +59,6 @@ This portfolio is a **frontend-based project** built using React and Vite to sho
 ✨ Responsive one-page portfolio  
 ⚡ Fast performance with Vite  
 🎯 Clean and modern UI  
-📂 Project showcase section  
 
 ---
 
